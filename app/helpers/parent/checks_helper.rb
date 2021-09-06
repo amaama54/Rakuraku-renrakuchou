@@ -1,0 +1,2 @@
+module Parent::ChecksHelper
+end
