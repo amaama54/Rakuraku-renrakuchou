@@ -19,11 +19,14 @@
           </tr>
         </tbody>
       </div>
-      
-      <div class="row">
-        <%= link_to "編集する", edit_teacher_connection_path(@connection) %>
-        <%= link_to "削除する", teacher_connection_path(@connection), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-8 offset-2 text-right">
+        <%= link_to "編集する", edit_teacher_connection_path(@connection), class: "btn btn-success" %>
+        <%= link_to "削除する", teacher_connection_path(@connection), class: "btn btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %>
       </div>
     </div>
+    
   </div>
 </main>
