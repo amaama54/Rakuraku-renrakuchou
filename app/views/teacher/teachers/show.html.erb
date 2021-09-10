@@ -1,7 +1,7 @@
 <main>
   <div class="container">
     <div class="row">
-      <div class="col  mt-5">
+      <div class="col mt-5">
         <h2>新規連絡</h2>
         <%= form_with model: @connection, url: "/teacher/teachers", local:true do |f| %>
           <h4>タイトル</h4>
@@ -24,12 +24,13 @@
           <tbody>
             <% @connections.each do |connection| %>
             <tr>
-                <td><%= connection.created_at %></td>
+                <td><%= connection.created_at.strftime('%Y/%m/%d') %></td>
                 <td><%=link_to connection.title, teacher_connection_path(connection) %></td>
             </tr>
             <% end %>
           </tbody>
         </table>
+        <%= paginate @connections %>
       </div>
     </row>
   </div>

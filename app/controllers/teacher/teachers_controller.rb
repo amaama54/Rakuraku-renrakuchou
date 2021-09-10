@@ -2,7 +2,7 @@ class Teacher::TeachersController < ApplicationController
   
   def show
     @teacher = Teacher.find(params[:id])
-    @connections = @teacher.connections
+    @connections = @teacher.connections.page(params[:page]).per(8)
     
     @connection = Connection.new
   end

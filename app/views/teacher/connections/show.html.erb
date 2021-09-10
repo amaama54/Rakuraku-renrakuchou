@@ -1,0 +1,29 @@
+<main>
+  <div class="container">
+    <div class="row mt-5">
+      <h2>連絡詳細</h2>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-md-8 offset-2">
+        <table class="table table-hover table-inverse">
+          <thead>
+            <tr>
+              <th class="text-center"><%= @connection.title %></</th>
+            </tr>
+          </thead>
+        </table>
+        <tbody>
+          <tr>
+            <td><%= @connection.body %></td>
+          </tr>
+        </tbody>
+      </div>
+      
+      <div class="row">
+        <%= link_to "編集する", edit_teacher_connection_path(@connection) %>
+        <%= link_to "削除する", teacher_connection_path(@connection), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      </div>
+    </div>
+  </div>
+</main>
