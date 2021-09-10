@@ -1,4 +1,4 @@
-class Parent::YearsController < ApplicationControlle
+class Parent::YearsController < ApplicationController
   
   def index
   end

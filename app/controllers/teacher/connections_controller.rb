@@ -1,11 +1,5 @@
 class Teacher::ConnectionsController < ApplicationController
   
-  def index
-  end
-  
-  def create
-  end
-  
   def show
   end
   
@@ -17,5 +11,5 @@ class Teacher::ConnectionsController < ApplicationController
   
   def destroy
   end
-  
+
 end
