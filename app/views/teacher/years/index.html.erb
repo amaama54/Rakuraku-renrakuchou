@@ -1,0 +1,32 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col mt-5">
+        <h2>新規予定</h2>
+        <%= form_with model: @year, url: "/teacher/years", local:true do |f| %>
+          <h4>タイトル</h4>
+          <%= f.text_field :title %>
+          <h4 class="mt-3">日時</h4>
+          <%= f.datetime_select :start_time %>
+          <div class="row">
+            <div class="col text-right">
+              <%= f.submit "投稿" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      
+      <div class="col-md-8 offset-md-1 mt-5">
+        <h2>カレンダー</h2>
+        <%= month_calendar events: @years do |date, years| %>
+          <%= date.day %>
+          
+          <% years.each do |year| %>
+            <%= year.title %>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </row>
+  </div>
+</main>

@@ -25,8 +25,7 @@
               <li class="nav-item mr-3"><%= link_to "年間予定", teacher_years_path, class: "btn btn-outline-dark text-dark" %></li>
               <li class="nav-item mr-3"><%= link_to "ログアウト", destroy_teacher_session_path, method: :delete, class: "btn btn-outline-dark text-dark" %></li>
             <% else %>
-              <li class="nav-item mr-3"><%= link_to "新規登録", new_parent_registration_path, class: "btn btn-outline-dark text-dark" %></li>
-              <li class="nav-item mr-3"><%= link_to "ログイン", new_parent_session_path, class: "btn btn-outline-dark text-dark" %></li>
+              <li class="nav-item mr-3"><%= link_to "トップページ", root_path, class: "btn btn-outline-dark text-dark" %></li>
             <% end %>
           </ul>
         </nav>

@@ -5,4 +5,5 @@ class Teacher < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :connections, dependent: :destroy
+  has_many :years, dependent: :destroy
 end

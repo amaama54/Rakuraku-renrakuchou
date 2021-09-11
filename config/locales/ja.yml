@@ -2,3 +2,11 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+
+#カレンダー機能
+ja:
+  date:
+    order:
+      - :year
+      - :month
+      - :day
