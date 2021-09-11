@@ -13,8 +13,7 @@ Rails.application.routes.draw do
   
   #先生側
   namespace :teacher do
-    resources :teachers, only: [:show, :create]
-    resources :connections, only: [:show, :edit, :update, :destroy]
+    resources :connections
     resources :years
   end
 end

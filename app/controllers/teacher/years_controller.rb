@@ -1,7 +1,8 @@
 class Teacher::YearsController < ApplicationController
   
   def index
-    @years = Year.all
+    @teacher = Teacher.find(current_teacher.id)
+    @years = @teacher.years
     
     @year = Year.new
   end

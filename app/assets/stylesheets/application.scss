@@ -13,12 +13,23 @@
  *= require_tree .
  *= require_self
  */
+@import "simple_calendar";
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+body {
+  position: relative;
+}
+
 header {
+  height: 100%;
   background-color: #00BB00;
+}
+
+main {
+  min-height: calc(100vh - 70px);
+  padding-bottom: 30px;
 }
 
 footer {
@@ -26,4 +37,8 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+img {
+	border-radius: 20px;
 }

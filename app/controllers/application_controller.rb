@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource
     when Teacher
-        teacher_teacher_path(current_teacher)
+        teacher_connections_path(current_teacher)
     when Parent
         connections_path
     end

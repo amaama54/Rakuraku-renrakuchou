@@ -13,7 +13,7 @@
     <header>
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="header-logo">logo</div>
+          <div class="header-logo"><%= image_tag "/assets/rakuraku.png", size: '60x60' %></div>
           <ul class="navbar-nav ml-auto">
             <% if parent_signed_in? %>
               <li class="nav-item mr-3"><%= link_to "連絡一覧", connections_path, class: "btn btn-outline-dark text-dark" %></li>
@@ -21,7 +21,7 @@
               <li class="nav-item mr-3"><%= link_to "保存一覧", checks_path, class: "btn btn-outline-dark text-dark" %></li>
               <li class="nav-item mr-3"><%= link_to "ログアウト", destroy_parent_session_path, method: :delete, class: "btn btn-outline-dark text-dark" %></li>
             <% elsif teacher_signed_in? %>
-              <li class="nav-item mr-3"><%= link_to "連絡一覧", teacher_teacher_path(current_teacher), class: "btn btn-outline-dark text-dark" %></li>
+              <li class="nav-item mr-3"><%= link_to "連絡一覧", teacher_connections_path(current_teacher), class: "btn btn-outline-dark text-dark" %></li>
               <li class="nav-item mr-3"><%= link_to "年間予定", teacher_years_path, class: "btn btn-outline-dark text-dark" %></li>
               <li class="nav-item mr-3"><%= link_to "ログアウト", destroy_teacher_session_path, method: :delete, class: "btn btn-outline-dark text-dark" %></li>
             <% else %>
