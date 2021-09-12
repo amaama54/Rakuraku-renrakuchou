@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :parents
   
   root to: "homes#top"
+  get "/search", to: "searchs#search"
   
   #保護者側
   scope module: :parent do
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
     resources :connections
     resources :years
   end
+  
 end

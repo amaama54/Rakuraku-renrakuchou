@@ -1,6 +1,6 @@
 class Teacher::ConnectionsController < ApplicationController
   
-    def index
+  def index
     @teacher = Teacher.find(current_teacher.id)
     @connections = @teacher.connections.order(created_at: :desc).page(params[:page]).per(8)
     

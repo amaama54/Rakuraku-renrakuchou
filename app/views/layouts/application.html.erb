@@ -20,6 +20,7 @@
               <li class="nav-item mr-3"><%= link_to "年間予定", years_path, class: "btn btn-outline-dark text-dark" %></li>
               <li class="nav-item mr-3"><%= link_to "保存一覧", checks_path, class: "btn btn-outline-dark text-dark" %></li>
               <li class="nav-item mr-3"><%= link_to "ログアウト", destroy_parent_session_path, method: :delete, class: "btn btn-outline-dark text-dark" %></li>
+              <%= render "searchs/form" %>
             <% elsif teacher_signed_in? %>
               <li class="nav-item mr-3"><%= link_to "連絡一覧", teacher_connections_path(current_teacher), class: "btn btn-outline-dark text-dark" %></li>
               <li class="nav-item mr-3"><%= link_to "年間予定", teacher_years_path, class: "btn btn-outline-dark text-dark" %></li>

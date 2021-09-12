@@ -1,0 +1,22 @@
+<main>
+  <div class="container">
+    <% if @model == "teacher" %>
+    <div class="row mt-5">
+      <div class="col"><h3>【先生の検索結果】</h3></div>
+      <div class="col"><h3>検索ワード: <%= @content %></h3></div>
+    </div>
+    
+    <div class="row">
+      <div class="col">
+        <% @records.each do |teacher| %>
+          <%= teacher.name %> 先生
+        <% end %>
+      </div>
+    </div>
+  
+    <% else @model == "connection" %>
+      <h3>【連絡の検索結果】検索ワード:<%= @content %></h3>
+      
+    <% end %>
+  </div>
+</main>
