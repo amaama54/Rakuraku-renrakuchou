@@ -1,0 +1,23 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table class="table table-hover table-inverse">
+          <% @followers.each do |follow| %>
+            <thead>
+              <tr>
+                <th>名前</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= follow.parent.name %></td>
+                <td><%= link_to "登録解除", teacher_teacher_parent_follow_path(teacher_id:current_teacher.id, id:follow.id), method: :delete %></td>
+              </tr>
+            </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>

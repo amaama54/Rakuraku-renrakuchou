@@ -1,0 +1,2 @@
+module Teacher::FollowRequestsHelper
+end

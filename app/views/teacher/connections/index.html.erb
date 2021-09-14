@@ -18,25 +18,12 @@
       
       <div class="col-md-8 offset-md-1 mt-5">
         <h2>連絡事項</h2>
-        <table class="table table-hover table-inverse">
-          <thead>
-            <tr>
-              <th>日付</th>
-              <th>タイトル</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @connections.each do |connection| %>
-            <tr>
-                <td><%= connection.created_at.strftime('%Y/%m/%d') %></td>
-                <td><%=link_to connection.title, teacher_connection_path(connection) %></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+        <%= render "teacher/connections/index" %>
+        
         <div class="row">
           <div class="col-md-2 offset-5"><%= paginate @connections %></div>
         </div>
+        
       </div>
     </row>
   </div>

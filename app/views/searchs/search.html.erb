@@ -10,6 +10,13 @@
       <div class="col">
         <% @records.each do |teacher| %>
           <%= teacher.name %> 先生
+          <% if current_parent.already_followed?(teacher) %>
+            <P>登録済み</P>
+          <% elsif current_parent.already_requested?(teacher) %>
+            <%= link_to "申請取り消し", teacher_follow_requests_path(teacher_id:teacher.id), method: :delete %>
+          <% else %>
+            <%= link_to "申請する", teacher_follow_requests_path(teacher_id:teacher.id), method: :post %>
+          <% end %>
         <% end %>
       </div>
     </div>

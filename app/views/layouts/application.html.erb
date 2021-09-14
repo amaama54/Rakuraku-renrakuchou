@@ -22,6 +22,8 @@
               <li class="nav-item mr-3"><%= link_to "ログアウト", destroy_parent_session_path, method: :delete, class: "btn btn-outline-dark text-dark" %></li>
               <%= render "searchs/form" %>
             <% elsif teacher_signed_in? %>
+              <li class="nav-item mr-3"><%= link_to "保護者一覧", teacher_teacher_parent_follows_path(current_teacher), class: "btn btn-outline-dark text-dark" %></li>
+              <li class="nav-item mr-3"><%= link_to "申請一覧", teacher_teacher_follow_requests_path(current_teacher), class: "btn btn-outline-dark text-dark" %></li>
               <li class="nav-item mr-3"><%= link_to "連絡一覧", teacher_connections_path(current_teacher), class: "btn btn-outline-dark text-dark" %></li>
               <li class="nav-item mr-3"><%= link_to "年間予定", teacher_years_path, class: "btn btn-outline-dark text-dark" %></li>
               <li class="nav-item mr-3"><%= link_to "ログアウト", destroy_teacher_session_path, method: :delete, class: "btn btn-outline-dark text-dark" %></li>

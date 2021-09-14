@@ -1,0 +1,22 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table class="table table-hover table-inverse">
+          <% @requests.each do |request| %>
+            <tr>
+              <td>名前</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><%= request.parent.name %></th>
+              <th><%= link_to "申請承認", teacher_teacher_allow_path(teacher_id:current_teacher.id, id:request.id), method: :post %></th>
+              <th><%= link_to "申請拒否", teacher_teacher_follow_request_path(teacher_id:current_teacher.id, id:request.id), method: :delete %></th>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>

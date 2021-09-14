@@ -39,6 +39,21 @@ footer {
   width: 100%;
 }
 
-img {
+.header-logo img {
 	border-radius: 20px;
 }
+
+/*トップページの画像、文字*/
+.cover-img {
+	height: 500px;
+	display: table;
+	width: 100%;
+	background-size: cover;
+}
+
+.cover-text {
+	display: table-cell;
+	vertical-align: middle;
+  text-align: center;
+}
+
