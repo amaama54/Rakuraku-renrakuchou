@@ -1,12 +1,16 @@
 <main>
   <div class="container">
     <div class="row mt-3">
-      <div class="col-md-2 offset-5"><h2>新規登録</h2></div>
+      <div class="col-sm"></div>
+      <div class="col-sm text-center"><h2>新規登録</h2></div>
+      <div class="col-sm"></div>
     </div>
   </div>
   
   <div class="row">
-    <div class="col-md-2 offset-5">
+    <div class="col-sm"></div>
+    
+    <div class="col-sm text-center">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         
@@ -41,7 +45,9 @@
       <div class="already-singin mt-5">
         <%= render "devise/shared/links" %>
       </div>
-      
     </div>
+    
+    <div class="col-sm"></div>
+    
   </div>
 </main>

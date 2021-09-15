@@ -8,7 +8,7 @@
       <div class="col-md-8 offset-4">
         <%= form_with model: @year, url: "/teacher/years/#{@year.id}", local:true do |f| %>
           <h4>タイトル</h4>
-          <%= f.text_field :title %>
+          <%= f.text_field :title, size:30 %>
           <%= f.submit "更新", class: "btn btn-success" %>
           <%= link_to "削除", teacher_year_path(@year), class: "btn btn-danger h-20", method: :delete, "data-confirm" => "本当に削除しますか？" %>
         <% end %>
