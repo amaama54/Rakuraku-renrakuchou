@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
@@ -29,6 +30,8 @@
               <li class="nav-item mr-3"><%= link_to "ログアウト", destroy_teacher_session_path, method: :delete, class: "btn btn-outline-dark text-dark" %></li>
             <% else %>
               <li class="nav-item mr-3"><%= link_to "トップページ", root_path, class: "btn btn-outline-dark text-dark" %></li>
+              <li class="nav-item mr-3"><%= link_to "保護者の方はこちら", new_parent_session_path, class: "btn btn-outline-dark text-dark" %></li>
+              <li class="nav-item mr-3"><%= link_to "教員の方はこちら", new_teacher_session_path, class: "btn btn-outline-dark text-dark" %></li>
             <% end %>
           </ul>
         </nav>
@@ -41,7 +44,7 @@
       <div class="container mt-4">
         <div class="row">
           <div class="mx-auto">
-            <p>ここに文字をいれる</p>
+            <p>-RakurakuRenrakuchou-</p>
           </div>
         </div>
       </div>

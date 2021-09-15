@@ -18,6 +18,12 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   position: relative;
 }
@@ -45,7 +51,7 @@ footer {
 
 /*トップページの画像、文字*/
 .cover-img {
-	height: 500px;
+	height: 430px;
 	display: table;
 	width: 100%;
 	background-size: cover;
@@ -55,5 +61,16 @@ footer {
 	display: table-cell;
 	vertical-align: middle;
   text-align: center;
+}
+
+.header-explanation-all {
+  background-color: #99FF99;
+}
+
+/*サインアップ、インのボタン*/
+.sign-btn {
+  width: 100%;
+  color: white;
+  background-color: #003366;
 }
 
