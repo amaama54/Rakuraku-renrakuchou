@@ -1,5 +1,25 @@
 <main>
   <div class="container">
-    <%=# render "teacher/connections/show" %>
+    
+    <div class="row mt-5">
+      <div class="col">
+        <h2 class="text-center">連絡詳細</h2>
+      </div>
+    </div>
+    
+    <%= render "teacher/connections/show" %>
+    
+    <div class="row">
+      <div class="col-md-2"></div>
+      
+      <div class="col-md-8 text-right">
+        <div id="keep_<%= @connection.id %>">
+          <%= render partial: "parent/keeps/keep" %>
+        </div>
+      </div>
+      
+      <div class="col-md-2"></div>
+    </div>
+    
   </div>
 </main>

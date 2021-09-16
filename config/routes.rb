@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   
   #保護者側
   scope module: :parent do
-    resources :connections, only: [:index, :show]
+    
+    resources :connections, only: [:index, :show] do
+      resource :keeps, only: [:create, :destroy]
+    end
+    
     resources :years, only: [:index]
-    resources :checks, only: [:index]
+    resources :keeps, only: [:index]
+    
     resources :teachers, only: [:show] do
       resource :follow_requests, only:[:create, :destroy]
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_12_103159) do
+ActiveRecord::Schema.define(version: 2021_09_16_041214) do
 
   create_table "connections", force: :cascade do |t|
     t.string "title"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2021_09_12_103159) do
   create_table "follow_requests", force: :cascade do |t|
     t.integer "teacher_id"
     t.integer "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "keeps", force: :cascade do |t|
+    t.integer "parent_id"
+    t.integer "connection_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,10 +1,12 @@
 <main>
   <div class="container">
+    
     <div class="row mt-3">
       <div class="col">
         <h2 class="text-center">年間予定</h2>
       </div>
     </div>
+    
     <div class="row mt-3">
       <div class="col-md-2"></div>
       
@@ -13,7 +15,7 @@
           <%= date.day %>
           
           <% years.each do |year| %>
-            <%= link_to year.title, edit_teacher_year_path(year) %>
+            <%= year.title %>
           <% end %>
         <% end %>
       </div>

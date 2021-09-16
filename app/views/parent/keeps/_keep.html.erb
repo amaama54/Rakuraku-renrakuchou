@@ -1,0 +1,9 @@
+<% if @connection.keeped_by?(current_parent) %>
+  <%= link_to connection_keeps_path(@connection), method: :delete, remote: true, class: "keep_btn" do %>
+    <i class="fas fa-check-square fa-2x"></i>
+  <% end %>
+<% else %>
+  <%= link_to connection_keeps_path(@connection), method: :post, remote: true, class: "keep_btn" do %>
+    <i class="far fa-square fa-2x"></i>
+  <% end %>
+<% end %>

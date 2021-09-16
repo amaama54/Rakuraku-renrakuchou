@@ -17,4 +17,7 @@ class Parent < ApplicationRecord
   #has_many :parent_follows, dependent: :destroy
   has_many :parent_follows
   has_many :teachers, through: :parent_follows, source: :teacher
+  
+  has_many :keeps, dependent: :destroy
+  has_many :connections, through: :keeps, source: :connection
 end
