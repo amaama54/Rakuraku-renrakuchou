@@ -10,4 +10,6 @@ class Teacher < ApplicationRecord
   #has_many :parent_follows, dependent: :destroy
   has_many :parent_follows
   has_many :parents, through: :parent_follows, source: :parent
+  #通知を知らせる
+  has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy
 end

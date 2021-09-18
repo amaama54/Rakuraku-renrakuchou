@@ -23,7 +23,7 @@
   
     <% else @model == "connection" %>
       <h3>【連絡の検索結果】検索ワード:<%= @content %></h3>
-      
+      <%= render "parent/connections/index", connections: @records %>
     <% end %>
   </div>
 </main>

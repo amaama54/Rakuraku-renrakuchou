@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @connections.each do |connection| %>
+        <% connections.each do |connection| %>
         <tr>
             <td><%= connection.created_at.strftime('%Y/%m/%d') %></td>
             <td><%=link_to connection.title, connection_path(connection) %></td>

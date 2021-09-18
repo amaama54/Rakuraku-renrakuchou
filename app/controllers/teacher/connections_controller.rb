@@ -11,6 +11,8 @@ class Teacher::ConnectionsController < ApplicationController
     @connection = Connection.new(connection_params)
     @connection.teacher_id = current_teacher.id
     @connection.save
+    #通知機能
+    @connection.create_notification_connection!(current)
     redirect_to teacher_connections_path(current_teacher)
   end
   
