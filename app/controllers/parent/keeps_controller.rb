@@ -1,7 +1,9 @@
 class Parent::KeepsController < ApplicationController
   
   def index
-    @connections = Connection.where(id: current_parent.connections)
+    @connections = Connection.where(id: current_parent.connections).order(created_at: :desc).page(params[:page]).per(8)
+    #現在の時間を取得
+    @current_time = Time.current
   end
   
   def create

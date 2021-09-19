@@ -25,17 +25,15 @@
 }
 
 body {
+  min-height: 100vh;
   position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
 }
 
 header {
   height: 100%;
   background-color: #00BB00;
-}
-
-main {
-  min-height: calc(100vh - 70px);
-  padding-bottom: 30px;
 }
 
 footer {
