@@ -1,7 +1,7 @@
 class Teacher::ParentFollowsController < ApplicationController
   
   def index
-    @followers = current_teacher.parent_follows.all
+    @followers = current_teacher.parent_follows.all.page(params[:page]).per(8)
   end
   
   def destroy

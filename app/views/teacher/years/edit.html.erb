@@ -1,11 +1,18 @@
 <main>
   <div class="container">
     <div class="row mt-5">
-      <h2>年間予定編集</h2>
+      <div class="col-md-2"></div>
+      <div class="col-md-8 text-center">
+        <h2>年間予定編集</h2>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
     </div>
     
     <div class="row mt-3">
-      <div class="col-md-8 offset-4">
+      <div class="col-md-2"></div>
+      
+      <div class="col-md-8 text-center">
         <%= form_with model: @year, url: "/teacher/years/#{@year.id}", local:true do |f| %>
           <h4>タイトル</h4>
           <%= f.text_field :title, size:30 %>
@@ -13,6 +20,8 @@
           <%= link_to "削除", teacher_year_path(@year), class: "btn btn-danger h-20", method: :delete, "data-confirm" => "本当に削除しますか？" %>
         <% end %>
       </div>
+      
+      <div class="col-md-2"></div>
     </div>
     
   </div>

@@ -1,7 +1,7 @@
 class Teacher::FollowRequestsController < ApplicationController
   
   def index
-    @requests = current_teacher.follow_requests.all
+    @requests = current_teacher.follow_requests.all.page(params[:page]).per(8)
   end
   
   def allow
