@@ -1,4 +1,5 @@
 class Teacher::ParentFollowsController < ApplicationController
+  before_action :authenticate_teacher!,except: [:top]
   
   def index
     @followers = current_teacher.parent_follows.all.page(params[:page]).per(8)

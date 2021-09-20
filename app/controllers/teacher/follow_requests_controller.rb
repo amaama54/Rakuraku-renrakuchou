@@ -1,4 +1,5 @@
 class Teacher::FollowRequestsController < ApplicationController
+  before_action :authenticate_teacher!,except: [:top]
   
   def index
     @requests = current_teacher.follow_requests.all.page(params[:page]).per(8)

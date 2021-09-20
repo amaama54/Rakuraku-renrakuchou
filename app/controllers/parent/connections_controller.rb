@@ -1,4 +1,5 @@
 class Parent::ConnectionsController < ApplicationController
+  before_action :authenticate_parent!,except: [:top]
 
   def index
     @connections = Connection.where(teacher_id: current_parent.teachers.pluck('id')).order(created_at: :desc).page(params[:page]).per(8)

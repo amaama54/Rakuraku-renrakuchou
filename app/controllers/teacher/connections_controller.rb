@@ -1,4 +1,5 @@
 class Teacher::ConnectionsController < ApplicationController
+  before_action :authenticate_teacher!,except: [:top]
   
   def index
     @teacher = Teacher.find(current_teacher.id)
@@ -10,8 +11,13 @@ class Teacher::ConnectionsController < ApplicationController
   def create
     @connection = Connection.new(connection_params)
     @connection.teacher_id = current_teacher.id
-    @connection.save
-    redirect_to teacher_connections_path(current_teacher)
+    if @connection.save
+      redirect_to teacher_connections_path(current_teacher)
+    else
+      @teacher = Teacher.find(current_teacher.id)
+      @connections = @teacher.connections.order(created_at: :desc).page(params[:page]).per(8)
+      render :index
+    end
   end
   
   def show

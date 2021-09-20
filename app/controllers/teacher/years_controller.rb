@@ -1,4 +1,5 @@
 class Teacher::YearsController < ApplicationController
+  before_action :authenticate_teacher!,except: [:top]
   
   def index
     @teacher = Teacher.find(current_teacher.id)

@@ -1,4 +1,5 @@
 class Parent::FollowRequestsController < ApplicationController
+  before_action :authenticate_parent!,except: [:top]
   
   def create
     teacher = Teacher.find(params[:teacher_id])
