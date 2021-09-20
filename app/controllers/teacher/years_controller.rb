@@ -12,6 +12,7 @@ class Teacher::YearsController < ApplicationController
     @year = Year.new(year_params)
     @year.teacher_id = current_teacher.id
     if @year.save
+      flash[:notice] = "新規予定を作成しました！"
       redirect_to teacher_years_path
     else
       @teacher = Teacher.find(current_teacher.id)

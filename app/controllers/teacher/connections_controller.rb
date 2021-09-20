@@ -12,6 +12,7 @@ class Teacher::ConnectionsController < ApplicationController
     @connection = Connection.new(connection_params)
     @connection.teacher_id = current_teacher.id
     if @connection.save
+      flash[:notice] = "新規連絡を作成しました！"
       redirect_to teacher_connections_path(current_teacher)
     else
       @teacher = Teacher.find(current_teacher.id)
@@ -32,6 +33,7 @@ class Teacher::ConnectionsController < ApplicationController
     @connection = Connection.find(params[:id])
     if @connection.update(connection_params)
       redirect_to teacher_connection_path(@connection)
+      flash[:notice] = "連絡を更新しました！"
     else
       render :edit
     end
@@ -41,6 +43,7 @@ class Teacher::ConnectionsController < ApplicationController
     connection = Connection.find(params[:id])
     connection.destroy
     redirect_to teacher_connections_path(current_teacher)
+    flash[:notice] = "連絡を削除しました！"
   end
   
    private
