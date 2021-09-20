@@ -4,12 +4,7 @@
       <div class="col mt-5">
         <h2>新規連絡</h2>
         
-        <% if @connection.errors.any? %>
-          <%= @connection.errors.count %>件のエラーが発生しました
-          <% @connection.errors.full_messages.each do |message| %>
-            <%= message %>
-          <% end %>
-        <% end %>
+        <%= render "teacher/connections/error", connection: @connection %>
         
         <%= form_with model: @connection, url: "/teacher/connections", local:true do |f| %>
           <h4>タイトル</h4>

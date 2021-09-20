@@ -11,8 +11,13 @@ class Teacher::YearsController < ApplicationController
   def create
     @year = Year.new(year_params)
     @year.teacher_id = current_teacher.id
-    @year.save
-    redirect_to teacher_years_path
+    if @year.save
+      redirect_to teacher_years_path
+    else
+      @teacher = Teacher.find(current_teacher.id)
+      @years = @teacher.years
+      render :index
+    end
   end
   
   def destroy

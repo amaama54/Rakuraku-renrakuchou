@@ -12,6 +12,9 @@
       <div class="col-md-2"></div>
       
       <div class="col-md-8 text-center">
+        
+        <%= render "teacher/connections/error", connection: @connection %>
+        
         <%= form_with model: @connection, url: "/teacher/connections/#{@connection.id}", local:true do |f| %>
           <h4>タイトル</h4>
           <%= f.text_field :title, size: 55 %>

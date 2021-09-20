@@ -29,9 +29,12 @@ class Teacher::ConnectionsController < ApplicationController
   end
   
   def update
-    connection = Connection.find(params[:id])
-    connection.update(connection_params)
-    redirect_to teacher_connection_path(connection)
+    @connection = Connection.find(params[:id])
+    if @connection.update(connection_params)
+      redirect_to teacher_connection_path(@connection)
+    else
+      render :edit
+    end
   end
   
   def destroy
