@@ -2,14 +2,14 @@
   <div class="container">
     
     <div class="row mt-3">
-      <div class="col-sm"></div>
-      <div class="col-sm text-center"><h2>申請一覧</h2></div>
-      <div class="col-sm"></div>
+      <div class="col-sm col-md-3"></div>
+      <div class="col-sm col-md-6 text-center"><h2>申請一覧</h2></div>
+      <div class="col-sm col-md-3"></div>
     </div>
     
     <div class="row mt-3">
-      <div class="col-sm"></div>
-      <div class="col-sm">
+      <div class="col-sm col-md-3"></div>
+      <div class="col-s  col-md-6">
         <table class="table table-hover table-inverse">
           <% @requests.each do |request| %>
             <tr>
@@ -25,13 +25,13 @@
           <% end %>
         </table>
       </div>
-      <div class="col-sm"></div>
+      <div class="col-sm col-md-3"></div>
     </div>
     
     <div class="row">
-      <div class="col-sm"></div>
-      <div class="col-sm"><%= paginate @requests %></div>
-      <div class="col-sm"></div>
+      <div class="col-sm col-md-3"></div>
+      <div class="col-sm col-md-6"><%= paginate @requests %></div>
+      <div class="col-sm col-md-3"></div>
     </div>
     
   </div>

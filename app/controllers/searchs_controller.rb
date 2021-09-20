@@ -13,12 +13,15 @@ class SearchsController < ApplicationController
       if method == "perfect"
         Teacher.where(email: content)
       else
-        Teacher.where("email LIKE ?", "%"+content+"%")
+        flash[:notice] = "先生の部分検索はできません！"
+        redirect_to connections_path
       end
     elsif model == "connection"
       if method == "perfect"
+        @current_time = Time.current
         Connection.where(title: content)
       else
+        @current_time = Time.current
         Connection.where("title LIKE ?", "%"+content+"%")
       end
     end

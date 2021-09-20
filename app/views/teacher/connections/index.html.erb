@@ -1,7 +1,7 @@
 <main>
   <div class="container">
     <div class="row">
-      <div class="col mt-5">
+      <div class="col-md-4 col-sm mt-5">
         <h2>新規連絡</h2>
         
         <%= render "teacher/connections/error", connection: @connection %>
@@ -10,7 +10,7 @@
           <h4>タイトル</h4>
           <%= f.text_field :title, size: 30 %>
           <h4 class="mt-3">本文</h4>
-          <%= f.text_area :body, size: "29x14" %>
+          <%= f.text_area :body, size: "30x14" %>
           <div class="row">
             <div class="col text-right">
               <%= f.submit "投稿", class: "btn btn-success" %>
@@ -19,13 +19,14 @@
         <% end %>
       </div>
       
-      <div class="col-md-8 offset-md-1 mt-5">
+      <div class="col-md-8 col-sm mt-5">
         <h2>連絡事項</h2>
         <p style="color:blue"><%= flash[:notice] %></p>
         <%= render "teacher/connections/index" %>
         
         <div class="row">
-          <div class="col-md-2 offset-5"><%= paginate @connections %></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-8"><%= paginate @connections %></div>
         </div>
         
       </div>
