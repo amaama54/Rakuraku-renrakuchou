@@ -19,10 +19,10 @@ class SearchsController < ApplicationController
     elsif model == "connection"
       if method == "perfect"
         @current_time = Time.current
-        Connection.where(title: content)
+       Connection.where(teacher_id: ParentFollow.where(parent_id: current_parent.id).pluck(:teacher_id), title: content)
       else
         @current_time = Time.current
-        Connection.where("title LIKE ?", "%"+content+"%")
+        Connection.where(teacher_id: ParentFollow.where(parent_id: current_parent.id).pluck(:teacher_id)).where("title LIKE ?", "%"+content+"%")
       end
     end
   end
