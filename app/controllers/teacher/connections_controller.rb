@@ -12,7 +12,7 @@ class Teacher::ConnectionsController < ApplicationController
     @connection = Connection.new(connection_params)
     @connection.teacher_id = current_teacher.id
     if @connection.save
-      flash[:notice] = "新規連絡を作成しました！"
+      flash[:success] = "新規連絡を作成しました！"
       redirect_to teacher_connections_path(current_teacher)
     else
       @teacher = Teacher.find(current_teacher.id)

@@ -13,7 +13,7 @@ class SearchsController < ApplicationController
       if method == "perfect"
         Teacher.where(email: content)
       else
-        flash[:notice] = "先生の部分検索はできません！"
+        flash[:alert] = "先生の部分検索はできません！"
         redirect_to connections_path
       end
     elsif model == "connection"
