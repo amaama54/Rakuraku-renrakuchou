@@ -11,12 +11,14 @@ class Teacher::FollowRequestsController < ApplicationController
     follow = current_teacher.parent_follows.new(teacher_id:current_teacher.id, parent_id: parent.id)
     follow.save
     request.destroy
+    flash[:notice] = "申請を承認しました"
     redirect_to teacher_teacher_follow_requests_path(current_teacher)
   end
   
   def destroy
     request = FollowRequest.find(params[:id])
     request.destroy
-    redirect_to teacher_teacher_parent_follows_path(current_teacher)
+    flash[:notice] = "申請を拒否しました"
+    redirect_to teacher_teacher_follow_requests_path(current_teacher)
   end
 end
