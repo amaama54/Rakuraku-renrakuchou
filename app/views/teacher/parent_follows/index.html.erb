@@ -12,13 +12,13 @@
       <div class="col-sm">
         <p class="text-center"><%= flash[:notice] %></p>
         <table class="table table-hover table-inverse">
+          <thead>
+            <tr>
+              <th>名前</th>
+              <th></th>
+            </tr>
+          </thead>
           <% @followers.each do |follow| %>
-            <thead>
-              <tr>
-                <th>名前</th>
-                <th></th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
                 <td><%= follow.parent.name %></td>

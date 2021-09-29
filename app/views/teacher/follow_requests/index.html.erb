@@ -12,17 +12,21 @@
       <div class="col-s  col-md-6">
         <p class="text-center"><%= flash[:notice] %></p>
         <table class="table table-hover table-inverse">
-          <% @requests.each do |request| %>
+          <thead>
             <tr>
               <th>名前</th>
               <th></th>
               <th></th>
             </tr>
+          </thead>
+          <% @requests.each do |request| %>
+          <tbody>
             <tr>
               <td><%= request.parent.name %></td>
               <td><%= link_to "申請承認", teacher_teacher_allow_path(teacher_id:current_teacher.id, id:request.id), method: :post %></td>
               <td><%= link_to "申請拒否", teacher_teacher_follow_request_path(teacher_id:current_teacher.id, id:request.id), method: :delete %></td>
             </tr>
+          </tbody>
           <% end %>
         </table>
       </div>
